@@ -1,9 +1,9 @@
-# AsaSakyan
+# Marked Up
 
-*Asa ang sakyan?* Find your own vehicle by its plate number. The answer is the
+Find your own vehicle by its plate number. The answer is the
 vehicle's location and its type, and nothing else.
 
-AsaSakyan is deliberately not a registry lookup. It can only find a vehicle
+Marked Up is deliberately not a registry lookup. It can only find a vehicle
 that its owner enrolled, and only for people the owner gave a share code to.
 The server keeps one position per vehicle and deletes it the moment sharing
 stops. No accounts, no names, no history.
@@ -40,7 +40,7 @@ python -m unittest discover -s tests -t .     # 22 tests, about 2 seconds
 python tools/make_icons.py                    # redraws the PNG icons
 ```
 
-Options: `--host`, `--port`, `--db`, or the `HOST`, `PORT` and `ASASAKYAN_DB`
+Options: `--host`, `--port`, `--db`, or the `HOST`, `PORT` and `MARKEDUP_DB`
 environment variables.
 
 ## Put it on the internet
@@ -74,10 +74,10 @@ storage avoids even that.
 
 ```
 server.py             entry point
-asasakyan/plates.py   plate normalisation, the vehicle type list
-asasakyan/db.py       SQLite: one row per vehicle, secrets stored hashed
-asasakyan/api.py      the JSON API as plain functions (lookup, enrol, restore, ...)
-asasakyan/http.py     standard-library HTTP server, static files, security headers
+markedup/plates.py   plate normalisation, the vehicle type list
+markedup/db.py       SQLite: one row per vehicle, secrets stored hashed
+markedup/api.py      the JSON API as plain functions (lookup, enrol, restore, ...)
+markedup/http.py     standard-library HTTP server, static files, security headers
 static/               the page (index.html, app.js, styles.css, manifest, icons)
 tests/                unittest suite that drives a real server on a random port
 tools/make_icons.py   draws the PNG icons with the standard library

@@ -1,6 +1,6 @@
 {
-  "name": "AsaSakyan",
-  "short_name": "AsaSakyan",
+  "name": "Marked Up",
+  "short_name": "Marked Up",
   "description": "Find your own vehicle by its plate. Location and type, nothing else.",
   "start_url": "./",
   "scope": "./",

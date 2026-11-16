@@ -52,7 +52,7 @@ def make_handler(api, static_dir=STATIC_DIR):
 
     class Handler(BaseHTTPRequestHandler):
         protocol_version = "HTTP/1.1"
-        server_version = "AsaSakyan"
+        server_version = "MarkedUp"
         sys_version = ""
 
         # -- entry points ----------------------------------------------------

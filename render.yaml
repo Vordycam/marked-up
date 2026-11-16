@@ -3,10 +3,10 @@
 # that shares the vehicle re-enrols itself automatically from the keys it holds.
 services:
   - type: web
-    name: asasakyan
+    name: marked-up
     runtime: docker
     plan: free
     healthCheckPath: /api/types
     envVars:
-      - key: ASASAKYAN_DB
-        value: /tmp/asasakyan.sqlite3
+      - key: MARKEDUP_DB
+        value: /tmp/markedup.sqlite3

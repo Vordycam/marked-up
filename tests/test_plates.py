@@ -1,6 +1,6 @@
 import unittest
 
-from asasakyan.plates import TYPE_LABELS, VEHICLE_TYPES, display_plate, normalize_plate
+from markedup.plates import TYPE_LABELS, VEHICLE_TYPES, display_plate, normalize_plate
 
 
 class NormalizePlateTest(unittest.TestCase):

@@ -1,4 +1,4 @@
-/* AsaSakyan browser side. Talks only to its own server (/api/...).
+/* Marked Up browser side. Talks only to its own server (/api/...).
  *
  * Two roles live in this one page:
  *   Find        - type a plate (+ share code) and watch where the vehicle is.
@@ -9,8 +9,8 @@
 (function () {
   'use strict';
 
-  const STORE_KEY = 'asasakyan.mine.v1';
-  const TAB_KEY = 'asasakyan.tab';
+  const STORE_KEY = 'markedup.mine.v1';
+  const TAB_KEY = 'markedup.tab';
   const REFRESH_MS = 15000;      // how often Find re-asks the server
   const MIN_SEND_MS = 5000;      // sharing: never post more often than this...
   const MIN_SEND_METRES = 15;    // ...unless the vehicle moved at least this far

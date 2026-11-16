@@ -8,9 +8,9 @@ import unittest
 import urllib.error
 import urllib.request
 
-from asasakyan.api import Api, RateLimiter, Request
-from asasakyan.db import Database
-from asasakyan.http import create_server
+from markedup.api import Api, RateLimiter, Request
+from markedup.db import Database
+from markedup.http import create_server
 
 
 class FakeClock:
@@ -265,7 +265,7 @@ class StaticTest(ServerTestCase):
         status, headers, body = self.fetch("/")
         self.assertEqual(status, 200)
         self.assertTrue(headers["Content-Type"].startswith("text/html"))
-        self.assertIn(b"AsaSakyan", body)
+        self.assertIn(b"Marked Up", body)
         self.assertIn("frame-src https://www.openstreetmap.org", headers["Content-Security-Policy"])
         self.assertEqual(headers["X-Content-Type-Options"], "nosniff")
         self.assertEqual(headers["Referrer-Policy"], "no-referrer")
