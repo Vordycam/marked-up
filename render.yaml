@@ -1,0 +1,12 @@
+# One-click deploy on Render (https://render.com): New > Blueprint > pick this repo.
+# The free plan sleeps when idle and resets its disk on every deploy; the phone
+# that shares the vehicle re-enrols itself automatically from the keys it holds.
+services:
+  - type: web
+    name: asasakyan
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/types
+    envVars:
+      - key: ASASAKYAN_DB
+        value: /tmp/asasakyan.sqlite3

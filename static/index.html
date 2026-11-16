@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>AsaSakyan</title>
+  <meta name="description" content="Find your own vehicle by its plate. Location and type, nothing else.">
+  <meta name="theme-color" content="#0f6b4f">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <img class="mark" src="icons/icon.svg" alt="" width="40" height="40">
+      <div>
+        <h1>AsaSakyan</h1>
+        <p class="tagline">Asa ang sakyan? Find your own vehicle by its plate.</p>
+      </div>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="Sections">
+      <button class="tab is-active" data-tab="find" role="tab" aria-selected="true" aria-controls="tab-find">Find</button>
+      <button class="tab" data-tab="mine" role="tab" aria-selected="false" aria-controls="tab-mine">My vehicles</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="tab-find" class="panel is-active" role="tabpanel">
+      <form id="find-form" class="card" autocomplete="off">
+        <label for="find-plate">Plate number</label>
+        <input id="find-plate" name="plate" placeholder="ABC 1234" required autocapitalize="characters" spellcheck="false">
+        <label for="find-code">Share code</label>
+        <input id="find-code" name="code" placeholder="From the owner (public vehicles need none)" autocapitalize="characters" spellcheck="false">
+        <div class="row">
+          <button type="submit" class="primary">Find</button>
+          <label class="check"><input type="checkbox" id="find-follow" checked> Keep refreshing</label>
+        </div>
+      </form>
+      <div id="find-result" class="result" hidden></div>
+      <p class="note">Only vehicles their owners enrolled here can be found. One position per vehicle is kept, and it is deleted the moment sharing stops.</p>
+    </section>
+
+    <section id="tab-mine" class="panel" role="tabpanel" hidden>
+      <form id="enrol-form" class="card" autocomplete="off">
+        <h2>Enrol a vehicle you own</h2>
+        <label for="enrol-plate">Plate number</label>
+        <input id="enrol-plate" name="plate" placeholder="ABC 1234" required autocapitalize="characters" spellcheck="false">
+        <label for="enrol-type">Type</label>
+        <select id="enrol-type" name="type"></select>
+        <label for="enrol-visibility">Who can find it</label>
+        <select id="enrol-visibility" name="visibility">
+          <option value="code">People I give the share code to</option>
+          <option value="public">Anyone who knows the plate</option>
+        </select>
+        <button type="submit" class="primary">Enrol</button>
+      </form>
+      <div id="mine-list" class="list"></div>
+      <p class="note">Open this tab on the phone that rides in the vehicle and tap <b>Share location</b>. Keep that page open with the screen on. The keys for your vehicles live only in this browser, so use <b>Copy phone link</b> to move them to another phone.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Standard-library Python on the server, plain JavaScript in the browser. No accounts, no names, no history.</p>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <script src="app.js"></script>
+</body>
+</html>
